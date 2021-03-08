@@ -6,4 +6,10 @@ object HelloScala extends App {
     case _ => "odd"
   }
 
+  val parityLambda: Int => String = {
+    case n if n%2 == 0 => "even"
+    case _ => "odd"
+  }
+
+  println(parityLambda(2))
 }
