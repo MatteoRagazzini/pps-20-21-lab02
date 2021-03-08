@@ -16,6 +16,10 @@ object Currying extends App {
 
   def nonCurriedPred(x:Double, y:Double, z:Double):Boolean = x<=y && y<= z
 
+  val nonCurriedPredAsFunction = (x:Double, y:Double, z:Double) => x<=y && y<= z
+
+  val CurriedPredAsFunction: Double => Double => Double => Boolean = x => y => z =>  x<=y && y<=z
+
   // slightly different syntax at the call side..
   println(mult(10,2)) // 20
   println(curriedMult(10)(2)) // 20
@@ -34,5 +38,7 @@ object Currying extends App {
   println(curriedMultAsFunction(10)) // u02.Currying$$$Lambda$12/...
   println(curriedPred(5)(10)(20))
   println(nonCurriedPred(5,10,20))
+  println(nonCurriedPredAsFunction(5,10,20))
+  println(CurriedPredAsFunction(5)(10)(20))
 
 }
