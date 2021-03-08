@@ -12,12 +12,10 @@ object HelloScala extends App {
     case _ => "odd"
   }
 
-  lazy val negative: (String => Boolean) => String => Boolean = predicate => predicate match{
-    case _ => !predicate(_)
-  }
+  lazy val negative: (String => Boolean) => String => Boolean = predicate => !predicate(_)
 
 
-  def neg(predicate: String => Boolean): String => Boolean = predicate match {
+  def neg[A](predicate: A => Boolean): A => Boolean = predicate match {
     case _ => !predicate(_)
   }
 
@@ -25,6 +23,9 @@ object HelloScala extends App {
 
   lazy val empty: String => Boolean = _==""
   lazy val notEmpty = neg(empty)
+
+  lazy val even: Int => Boolean = _%2==0
+  lazy val odd = neg(even)
 
   lazy val notEmptyWithLambdas = negative(empty)
 
