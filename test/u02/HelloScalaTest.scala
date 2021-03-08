@@ -11,6 +11,10 @@ class HelloScalaTest {
     assertEquals("even", parity(2))
   }
 
+  @Test def testOdd(): Unit ={
+    assertEquals("odd", parity(3))
+  }
+
 
 
 }
