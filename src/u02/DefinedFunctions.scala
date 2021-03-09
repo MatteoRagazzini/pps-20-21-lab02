@@ -1,7 +1,5 @@
 package u02
 
-import java.util.stream.DoubleStream
-
 object DefinedFunctions extends App {
 
   def compose(f: Int => Int, g:Int => Int):Int =>Int = {
@@ -13,7 +11,7 @@ object DefinedFunctions extends App {
   }
 
   println(compose(_-1,_*2)(5))
-  //println(genericsCompose((s:String)=> _ + "casa", (s:String)=> _ + "casa")("bella"))
+  //println(genericsCompose( _ + "casa", _ + "casa")("bella"))
 
 
   def fib(n: Int):Int = {
@@ -25,8 +23,7 @@ object DefinedFunctions extends App {
     _fib(n,prev = 1, current = 0)
   }
 
-  println((fib(0),fib(1),fib(2),fib(3),fib(4)));
-
+  println((fib(0),fib(1),fib(2),fib(3),fib(4)))
 
 
   // defined function
