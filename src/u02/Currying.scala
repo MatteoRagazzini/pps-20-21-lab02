@@ -36,9 +36,9 @@ object Currying extends App {
   println(curriedMultAsFunction(10)(2)) // 20
   println(curriedMultAsFunction) // u02.Currying$$$Lambda$7/...
   println(curriedMultAsFunction(10)) // u02.Currying$$$Lambda$12/...
-  println(curriedPred(5)(10)(20))
-  println(nonCurriedPred(5,10,20))
-  println(nonCurriedPredAsFunction(5,10,20))
-  println(CurriedPredAsFunction(5)(10)(20))
+  println("curried pred is"+ curriedPred(5)(10)(20))
+  println("nonCurriedPred is" + (5,10,20))
+  println("nonCurriedPredAsFunciton is" + nonCurriedPredAsFunction(5,10,20))
+  println("CurriedPredAsFunciton is" + CurriedPredAsFunction(5)(10)(20))
 
 }

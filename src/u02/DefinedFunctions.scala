@@ -1,6 +1,30 @@
 package u02
 
+import java.util.stream.DoubleStream
+
 object DefinedFunctions extends App {
+
+  def compose(f: Int => Int, g:Int => Int):Int =>Int = {
+    x =>f(g(x))
+  }
+
+  def genericsCompose[T](f:T=>T, g:T=>T):T=>T = {
+    x =>f(g(x))
+  }
+
+  println(compose(_-1,_*2)(5))
+  //println(genericsCompose((s:String)=> _ + "casa", (s:String)=> _ + "casa")("bella"))
+
+
+  def fib(n: Int): Int = n match{
+    case 0 => 0
+    case 1 => 1
+    case _ => fib(n-1) + fib(n-2)
+  }
+
+  println((fib(0),fib(1),fib(2),fib(3),fib(4)));
+
+
 
   // defined function
   def square(d: Double): Double = d*d
