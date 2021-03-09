@@ -21,6 +21,12 @@ object Optionals extends App {
       case Some(a) => f(a)
       case _ => None()
     }
+
+    def filter [A](opt: Option[A])(predicate: A => Boolean): Option[A] = opt match {
+      case Some(a) if predicate(a) => opt
+      case _ => None()
+    }
+
   }
 
   import Option._
@@ -33,4 +39,6 @@ object Optionals extends App {
   println(flatMap(s1)(i => Some(i+1))) // Some(2)
   println(flatMap(s1)(i => flatMap(s2)(j => Some(i+j)))) // Some(3)
   println(flatMap(s1)(i => flatMap(s3)(j => Some(i+j)))) // None
+
+  println(filter(Some(5))(_ > 2)) // Some(5)
 }

@@ -11,7 +11,7 @@ object DefinedFunctions extends App {
   }
 
   println(compose(_-1,_*2)(5))
-  //println(genericsCompose( _ + "casa", _ + "casa")("bella"))
+  // println(genericsCompose( _ + "casa", _ + "casa")("bella"))
 
 
   def fib(n: Int):Int = {
