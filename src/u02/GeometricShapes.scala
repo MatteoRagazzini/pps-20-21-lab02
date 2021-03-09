@@ -7,6 +7,10 @@ object GeometricShapes extends App {
   case class Circle(ray: Double) extends Shape
 
 
+  def perimeter(shape: Shape): Double = shape match {
+    case Rectangle(b,h) => (b+h)*2
+    case _ => 0
+  }
 
 
 
