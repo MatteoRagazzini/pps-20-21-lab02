@@ -16,6 +16,13 @@ object GeometricShapes extends App {
       case GeometricShapes.Circle(r) => 2 * Math.PI * r
     }
 
+    def area(shape: GeometricShapes.Shape): Double = shape match {
+      case GeometricShapes.Rectangle(b, h) => b * h
+      case GeometricShapes.Square(s) => Math.pow(s,2)
+      // assuming that for the circle the perimeter corresponds to circumference
+      case GeometricShapes.Circle(r) => Math.PI * Math.pow(r,2)
+    }
+
   }
 
 
