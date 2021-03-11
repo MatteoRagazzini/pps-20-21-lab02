@@ -1,6 +1,5 @@
 package u02
 
-// Ex 4
 object GeometricShapes extends App {
   sealed trait Shape
   case class Rectangle(base: Int, high: Int) extends Shape

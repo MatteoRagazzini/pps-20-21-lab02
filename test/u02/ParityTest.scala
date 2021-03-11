@@ -1,9 +1,17 @@
 package u02
 import org.junit.jupiter.api.Assertions._
 import org.junit.jupiter.api.Test
-import u02.HelloScala._
+import u02.Parity._
 
-class HelloScalaTest {
+class ParityTest {
+
+  lazy val empty: String => Boolean = _==""
+  lazy val notEmpty: String => Boolean = neg(empty)
+
+  lazy val even: Int => Boolean = _%2==0
+  lazy val odd: Int => Boolean = neg(even)
+
+  lazy val notEmptyWithLambdas: String => Boolean = negative(empty)
 
 
   @Test def testEven(): Unit ={

@@ -1,6 +1,6 @@
 package u02
-// Exercise 2a
-object HelloScala extends App {
+
+object Parity extends App {
   def parity(x: Int): String = x match {
     case x if x % 2 == 0 => "even"
     case _ => "odd"
@@ -17,19 +17,4 @@ object HelloScala extends App {
   def neg[A](predicate: A => Boolean): A => Boolean = predicate match {
     case _ => !predicate(_)
   }
-
-  println(parityLambda(2))
-
-  lazy val empty: String => Boolean = _==""
-  lazy val notEmpty = neg(empty)
-
-  lazy val even: Int => Boolean = _%2==0
-  lazy val odd = neg(even)
-
-  lazy val notEmptyWithLambdas = negative(empty)
-
-
-
-
-
 }
