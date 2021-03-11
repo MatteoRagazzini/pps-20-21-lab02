@@ -38,10 +38,8 @@ object Optionals extends App {
       case (Some(a), Some(b)) => Some(mapper(a,b))
       case _ => None()
     }
-    //--------------------------------------
+    //-----------------------------------------------------------
   }
-
-
 
   import Option._
   val s1: Option[Int] = Some(1)
@@ -53,22 +51,4 @@ object Optionals extends App {
   println(flatMap(s1)(i => Some(i+1))) // Some(2)
   println(flatMap(s1)(i => flatMap(s2)(j => Some(i+j)))) // Some(3)
   println(flatMap(s1)(i => flatMap(s3)(j => Some(i+j)))) // None
-
-  //my test
-
-  println(filter(Some(5))(_ > 2)) // Some(5)
-  println(filter(Some(5))(_ > 8)) // None
-
-  println(map(Some(5))(_ > 2))    // Some(true)
-  println(map(None[Int]())(_ > 2))  // None
-
-  println(map2(None[Int]())(Some(5))((a: Int, b: Int) => a<b match {  //None
-    case true => "ciao"
-    case _ => "foo"
-  }))
-  println(map2(Some(3))(Some(5))((a: Int, b: Int) => a<b match {  //ciao
-    case true => "ciao"
-    case _ => "foo"
-  }))
-
 }
