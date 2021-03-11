@@ -2,22 +2,27 @@ package u02
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import u02.GeometricShapes.{Circle, Rectangle, Square}
+import u02.GeometricShapes._
 
 class GeometricShapesTest {
 
+  val rectangle: Rectangle = Rectangle(2,3)
+  val square: Square = Square(2)
+  val circle: Circle = Circle(1)
+
+
   @Test
   def testPerimeter(): Unit ={
-    assertEquals(10,GeometricFunctions.perimeter(Rectangle(2,3)))
-    assertEquals(8,GeometricFunctions.perimeter(Square(2)))
-    assertEquals(6.2832,GeometricFunctions.perimeter(Circle(1)), 0.0001)
+    assertEquals(10,GeometricFunctions.perimeter(rectangle))
+    assertEquals(8,GeometricFunctions.perimeter(square))
+    assertEquals(6.2832,GeometricFunctions.perimeter(circle), 0.0001)
   }
 
   @Test
   def testArea(): Unit ={
-    assertEquals(6,GeometricFunctions.area(Rectangle(2,3)))
-    assertEquals(4,GeometricFunctions.area(Square(2)))
-    assertEquals(3.14159,GeometricFunctions.area(Circle(1)), 0.0001)
+    assertEquals(6,GeometricFunctions.area(rectangle))
+    assertEquals(4,GeometricFunctions.area(square))
+    assertEquals(3.14159,GeometricFunctions.area(circle), 0.0001)
   }
 
 }
