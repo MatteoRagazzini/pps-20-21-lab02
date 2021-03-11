@@ -2,18 +2,6 @@ package u02
 
 object DefinedFunctions extends App {
 
-  def compose(f: Int => Int, g:Int => Int):Int =>Int = {
-    x =>f(g(x))
-  }
-
-  def genericsCompose[T](f:T=>T, g:T=>T):T=>T = {
-    x =>f(g(x))
-  }
-
-  println(compose(_-1,_*2)(5))
-  // println(genericsCompose( _ + "casa", _ + "casa")("bella"))
-
-
   def fib(n: Int):Int = {
     @annotation.tailrec
     def _fib(n: Int, prev: Int, current: Int): Int = n match {
@@ -25,6 +13,7 @@ object DefinedFunctions extends App {
 
   println((fib(0),fib(1),fib(2),fib(3),fib(4)))
 
+//-------------------------------------------------------------
 
   // defined function
   def square(d: Double): Double = d*d
